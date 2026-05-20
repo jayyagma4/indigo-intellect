@@ -39,8 +39,9 @@
   --color-indigo-400: #38BDF8;
   --color-indigo-500: #0EA5E9;
   --color-indigo-600: #0284C7;
-  --color-violet-500: #22D3EE;
-  --color-violet-400: #67E8F9;
+  --color-violet-500: #A855F7;
+  --color-violet-400: #C084FC;
+
 
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -93,15 +94,18 @@
 
   /* Dodger blue #1E90FF */
   --accent-blue: oklch(0.68 0.18 250);
-  /* Cyan #22D3EE */
-  --accent-violet: oklch(0.78 0.14 200);
+  /* Modern purple #A855F7 */
+  --accent-violet: oklch(0.65 0.25 305);
 
   --gradient-primary: linear-gradient(135deg, #1E90FF, #22D3EE);
-  --gradient-violet: linear-gradient(135deg, #0EA5E9, #22D3EE);
+  --gradient-violet: linear-gradient(135deg, #1E90FF, #A855F7);
+  --gradient-spectrum: linear-gradient(135deg, #1E90FF 0%, #22D3EE 45%, #A855F7 100%);
   --glow-indigo: 0 0 60px rgba(14, 165, 233, 0.4);
   --glow-indigo-soft: 0 0 30px rgba(14, 165, 233, 0.22);
+  --glow-violet: 0 0 60px rgba(168, 85, 247, 0.4);
   --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 20px 40px -20px rgba(0, 0, 0, 0.6);
-  --shadow-card-hover: 0 0 0 1px rgba(14, 165, 233, 0.4), 0 20px 60px -20px rgba(34, 211, 238, 0.45);
+  --shadow-card-hover: 0 0 0 1px rgba(168, 85, 247, 0.4), 0 20px 60px -20px rgba(168, 85, 247, 0.45);
+
 
 }
 
@@ -248,7 +252,7 @@
   .aurora-3 {
     width: 560px; height: 560px;
     bottom: -180px; left: 30%;
-    background: radial-gradient(circle, #0EA5E9 0%, transparent 60%);
+    background: radial-gradient(circle, #A855F7 0%, transparent 60%);
     animation: aurora-float-3 30s ease-in-out infinite;
     opacity: 0.4;
   }
@@ -266,7 +270,7 @@
     background: conic-gradient(from 0deg at 50% 50%,
       rgba(14,165,233,0) 0deg,
       rgba(14,165,233,0.18) 60deg,
-      rgba(34,211,238,0.12) 140deg,
+      rgba(168,85,247,0.16) 140deg,
       rgba(30,144,255,0.18) 220deg,
       rgba(14,165,233,0) 360deg);
     filter: blur(60px);
