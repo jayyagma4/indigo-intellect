@@ -108,8 +108,6 @@ export function AuroraBackground() {
       {/* Particle field */}
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full opacity-70" />
 
-      {/* Moving grid */}
-      <div className="grid-move absolute inset-0 opacity-[0.05]" />
 
       {/* Scan beam */}
       <div className="scan-beam" />
