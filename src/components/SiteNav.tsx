@@ -10,11 +10,11 @@ export function SiteNav() {
     <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
       <nav className="flex items-center justify-between px-6 py-2 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-2xl shadow-indigo-500/10">
         {/* Logo */}
-        <Link to="/" className="flex items-center shrink-0 -my-6">
+        <Link to="/" className="flex items-center shrink-0 -my-10">
           <img
             src={logo}
             alt="Sportshandicapper"
-            className="h-20 md:h-24 w-auto object-contain drop-shadow-[0_4px_28px_rgba(168,85,247,0.45)]"
+            className="h-28 md:h-32 w-auto object-contain drop-shadow-[0_4px_28px_rgba(168,85,247,0.45)]"
           />
         </Link>
 
