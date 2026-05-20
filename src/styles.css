@@ -207,4 +207,73 @@
     width: 100%;
     background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
   }
+
+  /* Aurora animated background */
+  .aurora {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+  .aurora-1 {
+    width: 720px; height: 720px;
+    top: -200px; left: -160px;
+    background: radial-gradient(circle, #6366F1 0%, transparent 60%);
+    animation: aurora-float-1 22s ease-in-out infinite;
+  }
+  .aurora-2 {
+    width: 640px; height: 640px;
+    top: 20%; right: -180px;
+    background: radial-gradient(circle, #3B82F6 0%, transparent 60%);
+    animation: aurora-float-2 26s ease-in-out infinite;
+    opacity: 0.45;
+  }
+  .aurora-3 {
+    width: 560px; height: 560px;
+    bottom: -180px; left: 30%;
+    background: radial-gradient(circle, #8B5CF6 0%, transparent 60%);
+    animation: aurora-float-3 30s ease-in-out infinite;
+    opacity: 0.4;
+  }
+
+  .noise {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: ticker 40s linear infinite;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+}
+
+@keyframes aurora-float-1 {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(80px, 60px) scale(1.15); }
+}
+@keyframes aurora-float-2 {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(-100px, 80px) scale(1.1); }
+}
+@keyframes aurora-float-3 {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(60px, -80px) scale(1.2); }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
 }
