@@ -14,7 +14,7 @@ export function SiteNav() {
           <img
             src={logo}
             alt="Sportshandicapper"
-            className="h-16 md:h-20 w-auto object-contain drop-shadow-[0_4px_24px_rgba(59,130,246,0.4)]"
+            className="h-24 md:h-32 w-auto object-contain drop-shadow-[0_4px_28px_rgba(168,85,247,0.45)]"
           />
         </Link>
 
