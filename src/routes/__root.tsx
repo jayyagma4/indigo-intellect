@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { AuroraBackground } from "@/components/AuroraBackground";
 
 function NotFoundComponent() {
   return (
@@ -88,6 +89,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <AuroraBackground />
       <SiteNav />
       <main className="pt-16">
         <Outlet />
