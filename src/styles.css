@@ -252,7 +252,7 @@
   .aurora-3 {
     width: 560px; height: 560px;
     bottom: -180px; left: 30%;
-    background: radial-gradient(circle, #0EA5E9 0%, transparent 60%);
+    background: radial-gradient(circle, #A855F7 0%, transparent 60%);
     animation: aurora-float-3 30s ease-in-out infinite;
     opacity: 0.4;
   }
