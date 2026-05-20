@@ -110,8 +110,8 @@ function HomePage() {
             </div>
 
             {/* Right: ROI Simulator card */}
-            <Reveal delay={200}>
-              <div className="lg:col-span-5">
+            <div className="lg:col-span-5">
+              <Reveal delay={200}>
                 <div className="backdrop-blur-3xl bg-white/[0.04] border border-white/10 rounded-[2.5rem] p-7 md:p-8 relative shadow-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-violet-500/10 opacity-60 pointer-events-none" />
                   <div className="relative z-10">
