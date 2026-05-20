@@ -78,7 +78,7 @@ function HomePage() {
               <Reveal delay={100}>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] text-white">
                   Betting{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E90FF] via-[#0EA5E9] to-[#22D3EE]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E90FF] via-[#22D3EE] to-[#A855F7]">
                     Intelligence
                   </span>{" "}
                   At Scale.
@@ -372,7 +372,7 @@ function HomePage() {
                       <div className="relative z-10 mb-7">
                         <div className="h-2 bg-white/5 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-[#1E90FF] via-[#0EA5E9] to-[#22D3EE] shadow-lg shadow-indigo-500/40"
+                            className="h-full bg-gradient-to-r from-[#1E90FF] via-[#22D3EE] to-[#A855F7] shadow-lg shadow-indigo-500/40"
                             style={{ width: `${featured.conf}%` }}
                           />
                         </div>
@@ -431,7 +431,7 @@ function HomePage() {
                             </div>
                             <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
                               <div
-                                className="h-full bg-gradient-to-r from-[#1E90FF] via-[#0EA5E9] to-[#22D3EE]"
+                                className="h-full bg-gradient-to-r from-[#1E90FF] via-[#22D3EE] to-[#A855F7]"
                                 style={{ width: `${p.conf}%` }}
                               />
                             </div>
