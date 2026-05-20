@@ -161,8 +161,8 @@ function HomePage() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
