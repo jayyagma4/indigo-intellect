@@ -33,26 +33,27 @@ function HomePage() {
     <div>
       {/* HERO */}
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+        {/* Floating orbs */}
+        <div className="orb h-40 w-40 top-24 left-[8%] opacity-60" style={{ background: "radial-gradient(circle, rgba(99,102,241,0.55), transparent 70%)", animation: "float-slow 8s ease-in-out infinite" }} />
+        <div className="orb h-56 w-56 bottom-20 right-[6%] opacity-50" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.5), transparent 70%)", animation: "float-slow 11s ease-in-out infinite" }} />
+        <div className="orb h-24 w-24 top-1/2 left-[42%] opacity-40" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.6), transparent 70%)", animation: "float-slow 9s ease-in-out infinite" }} />
+
+        {/* Conic spotlight */}
         <div
-          className="absolute inset-0 -z-10"
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-[600px] -z-10 opacity-40"
           style={{
             background:
-              "radial-gradient(600px 400px at 50% 30%, rgba(99,102,241,0.25), transparent 60%), radial-gradient(800px 500px at 80% 70%, rgba(59,130,246,0.18), transparent 60%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 -z-10 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
+              "conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(99,102,241,0.35) 90deg, transparent 180deg, rgba(59,130,246,0.3) 270deg, transparent 360deg)",
+            maskImage: "radial-gradient(ellipse at 50% 0%, #000 30%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse at 50% 0%, #000 30%, transparent 70%)",
           }}
         />
 
         <div className="container-x py-24 grid lg:grid-cols-[1.3fr_1fr] gap-16 items-center">
           <Reveal>
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/5 text-xs text-indigo-200">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/5 text-xs text-indigo-200 backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
                 Live picks dropping tonight
               </div>
@@ -80,16 +81,18 @@ function HomePage() {
 
           <Reveal delay={200}>
             <div className="relative">
-              <div className="absolute -inset-8 -z-10 rounded-3xl" style={{ background: "radial-gradient(closest-side, rgba(99,102,241,0.35), transparent 70%)" }} />
-              <PickCard
-                sport="NBA"
-                matchup="Celtics @ Nuggets"
-                pick="Nuggets -3.5 (Best 5★ play of the week)"
-                stars={5}
-                confidence={87}
-                time="Tonight · 10:00 PM ET"
-              />
-              <div className="mt-4">
+              <div className="absolute -inset-8 -z-10 rounded-3xl animate-pulse" style={{ background: "radial-gradient(closest-side, rgba(99,102,241,0.4), transparent 70%)" }} />
+              <div style={{ animation: "float-slow 7s ease-in-out infinite" }}>
+                <PickCard
+                  sport="NBA"
+                  matchup="Celtics @ Nuggets"
+                  pick="Nuggets -3.5 (Best 5★ play of the week)"
+                  stars={5}
+                  confidence={87}
+                  time="Tonight · 10:00 PM ET"
+                />
+              </div>
+              <div className="mt-4" style={{ animation: "float-slow 9s ease-in-out infinite" }}>
                 <PickCard
                   sport="NFL"
                   matchup="Chiefs vs Bills"
@@ -103,6 +106,32 @@ function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      {/* LIVE TICKER */}
+      <section className="border-y border-white/5 bg-white/[0.02] py-3 overflow-hidden">
+        <div className="ticker-track text-xs font-bold uppercase tracking-wider">
+          {Array.from({ length: 2 }).map((_, dup) => (
+            <div key={dup} className="flex items-center gap-12 pr-12">
+              {[
+                ["NBA", "Nuggets -3.5", "+12.4u"],
+                ["NFL", "Chiefs U47.5", "+8.1u"],
+                ["NHL", "Rangers ML", "+5.6u"],
+                ["MLB", "Dodgers -1.5", "+9.3u"],
+                ["NCAAF", "Bama -7", "+14.2u"],
+                ["NCAAB", "Duke -4.5", "+6.8u"],
+              ].map(([s, p, u], i) => (
+                <div key={`${dup}-${i}`} className="flex items-center gap-3">
+                  <span className="text-indigo-300">{s}</span>
+                  <span className="text-slate-300">{p}</span>
+                  <span className="text-emerald-400">{u}</span>
+                  <span className="h-1 w-1 rounded-full bg-white/20" />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
 
       {/* TRUST BAR */}
       <section className="border-y border-white/5 bg-white/[0.015]">
