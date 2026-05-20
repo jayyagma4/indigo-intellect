@@ -46,15 +46,42 @@ export function SiteNav() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {navLink("/", "Home")}
+          <a href="/#articles" className="text-sm text-muted-foreground hover:text-white">Exclusive Articles</a>
+          {navLink("/picks", "Picks")}
           {navLink("/packages", "Packages")}
-          {navLink("/picks", "Today's Picks")}
-          <a href="/#how" className="text-sm text-muted-foreground hover:text-white">How it works</a>
+          <div className="relative group">
+            <button className="text-sm text-muted-foreground hover:text-white inline-flex items-center gap-1">
+              Data & Tools
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
+            </button>
+            <div className="absolute right-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <div className="w-64 rounded-xl border border-white/10 bg-[#0A0A14]/95 backdrop-blur-xl p-2 shadow-2xl">
+                {[
+                  ["Betting Tools", "Calculators & trackers"],
+                  ["Live Odds", "Real-time odds comparison"],
+                  ["Consensus", "Public betting splits"],
+                  ["Trends", "Hot streaks & patterns"],
+                ].map(([n, d]) => (
+                  <div key={n} className="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 cursor-default">
+                    <div>
+                      <p className="text-sm font-semibold text-white">{n}</p>
+                      <p className="text-[11px] text-muted-foreground">{d}</p>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-wider font-bold text-indigo-300 bg-indigo-500/15 px-2 py-0.5 rounded-full">Soon</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <a href="/#about" className="text-sm text-muted-foreground hover:text-white">About Us</a>
         </nav>
 
-        <Link to="/packages" className="btn-primary !py-2 !px-5 text-sm">
-          Start Free Trial
-        </Link>
+        <div className="flex items-center gap-4">
+          <a href="/#login" className="hidden md:inline text-sm text-muted-foreground hover:text-white">Log In</a>
+          <Link to="/packages" className="btn-primary !py-2 !px-5 text-sm">
+            Join Now
+          </Link>
+        </div>
       </div>
     </header>
   );
