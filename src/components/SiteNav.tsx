@@ -102,11 +102,13 @@ export function SiteNav() {
           </a>
           <Link
             to="/packages"
-            className="group inline-flex items-center px-5 py-2.5 text-sm font-bold text-[#07091A] bg-white rounded-xl hover:bg-white/90 transition-all active:scale-95 shadow-lg shadow-white/5"
+            className="group inline-flex items-center px-5 py-2.5 text-sm font-bold text-white rounded-xl transition-all active:scale-95 shadow-lg shadow-sky-500/30 hover:shadow-sky-400/50 hover:-translate-y-0.5"
+            style={{ background: "linear-gradient(135deg, #1E90FF, #22D3EE)" }}
           >
             Join Now
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 transition-transform" />
           </Link>
+
         </div>
       </nav>
     </header>
