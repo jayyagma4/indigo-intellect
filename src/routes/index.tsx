@@ -242,6 +242,7 @@ function HomePage() {
                 </div>
               </article>
             </Reveal>
+            </div>
 
             {/* SECONDARY ARTICLES */}
             <div className="lg:col-span-5 flex flex-col gap-6">
