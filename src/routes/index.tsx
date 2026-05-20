@@ -195,7 +195,7 @@ function HomePage() {
           <div className="grid lg:grid-cols-12 gap-6">
             {/* FEATURED ARTICLE */}
             <Reveal delay={0}>
-              <article className="group lg:col-span-7 relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md hover:border-indigo-400/40 transition-all h-full flex flex-col min-h-[460px]">
+              <article className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md hover:border-indigo-400/40 transition-all h-full flex flex-col min-h-[460px]">
                 <div className={`relative h-64 md:h-80 bg-gradient-to-br ${ARTICLES[0].accent} overflow-hidden`}>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#07091A] via-[#07091A]/40 to-transparent" />
                   <div
