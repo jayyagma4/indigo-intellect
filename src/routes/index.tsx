@@ -306,65 +306,147 @@ function HomePage() {
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { sport: "MLB", time: "May 19 @ 4:10 PM ET", a: "Atlanta Braves", b: "Miami Marlins", conf: 78, stars: 5, whale: false },
+          {(() => {
+            const PICKS = [
+              { sport: "MLB", time: "May 19 @ 8:40 PM ET", a: "Texas Rangers", b: "Colorado Rockies", conf: 94, stars: 0, whale: true, edge: "+EV 8.2%", pick: "Rangers ML -118", venue: "Coors Field" },
               { sport: "MLB", time: "May 19 @ 7:05 PM ET", a: "Blue Jays", b: "Yankees", conf: 93, stars: 0, whale: true },
               { sport: "NBA", time: "May 19 @ 8:00 PM ET", a: "Cavaliers", b: "Knicks", conf: 76, stars: 5, whale: false },
-              { sport: "MLB", time: "May 19 @ 8:40 PM ET", a: "Texas Rangers", b: "Colorado Rockies", conf: 94, stars: 0, whale: true },
-            ].map((p, i) => (
-              <Reveal key={i} delay={i * 80}>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-6 hover:border-indigo-400/30 hover:bg-white/[0.05] transition-all">
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#6366F1] grid place-items-center text-[11px] font-bold text-white">
-                        {p.sport}
+              { sport: "MLB", time: "May 19 @ 4:10 PM ET", a: "Atlanta Braves", b: "Miami Marlins", conf: 78, stars: 5, whale: false },
+            ];
+            const featured = PICKS[0];
+            const rest = PICKS.slice(1);
+            return (
+              <div className="grid lg:grid-cols-12 gap-6 items-stretch">
+                {/* FEATURED WHALE PICK */}
+                <div className="lg:col-span-7">
+                  <Reveal>
+                    <div className="relative h-full rounded-3xl border border-indigo-400/30 bg-gradient-to-br from-indigo-500/[0.08] via-white/[0.03] to-violet-500/[0.08] backdrop-blur-md overflow-hidden p-8 md:p-10 flex flex-col">
+                      {/* glow accents */}
+                      <div className="absolute -top-32 -right-24 w-80 h-80 rounded-full bg-indigo-500/20 blur-3xl pointer-events-none" />
+                      <div className="absolute -bottom-32 -left-20 w-80 h-80 rounded-full bg-violet-500/15 blur-3xl pointer-events-none" />
+
+                      <div className="relative z-10 flex items-center justify-between mb-8">
+                        <div className="flex items-center gap-3">
+                          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-gradient-to-r from-[#3B82F6] to-[#6366F1] px-3 py-1.5 rounded-md shadow-lg shadow-indigo-500/30">
+                            ★ Spotlight
+                          </span>
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-emerald-400/40 text-emerald-300 text-[11px] font-bold">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            Live · Started
+                          </span>
+                        </div>
+                        <span className="text-indigo-200 text-sm font-extrabold tracking-wider">★10 WHALE</span>
                       </div>
-                      <span className="text-sm font-bold text-white">{p.sport}</span>
+
+                      <div className="relative z-10 mb-6">
+                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-indigo-300 mb-2">
+                          {featured.sport} · {featured.time}
+                        </div>
+                        <div className="flex items-end gap-4 flex-wrap">
+                          <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                            {featured.a}
+                          </h3>
+                          <span className="text-xs text-slate-500 uppercase tracking-widest pb-2">vs</span>
+                          <h3 className="text-2xl md:text-3xl font-bold text-slate-300 tracking-tight leading-tight pb-0.5">
+                            {featured.b}
+                          </h3>
+                        </div>
+                        <p className="text-slate-400 text-sm mt-3">{featured.venue}</p>
+                      </div>
+
+                      <div className="relative z-10 grid grid-cols-3 gap-4 mb-7">
+                        <div className="rounded-xl bg-white/[0.04] border border-white/10 p-4">
+                          <div className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1">Confidence</div>
+                          <div className="text-2xl font-extrabold text-white">{featured.conf}%</div>
+                        </div>
+                        <div className="rounded-xl bg-white/[0.04] border border-white/10 p-4">
+                          <div className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1">Edge</div>
+                          <div className="text-2xl font-extrabold text-emerald-300">{featured.edge}</div>
+                        </div>
+                        <div className="rounded-xl bg-white/[0.04] border border-white/10 p-4">
+                          <div className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1">The Pick</div>
+                          <div className="text-sm font-extrabold text-indigo-200 mt-1.5">{featured.pick}</div>
+                        </div>
+                      </div>
+
+                      <div className="relative z-10 mb-7">
+                        <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6] shadow-lg shadow-indigo-500/40"
+                            style={{ width: `${featured.conf}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="relative z-10 mt-auto flex items-center gap-3">
+                        <Link
+                          to="/packages"
+                          className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#6366F1] text-sm font-bold text-white text-center hover:shadow-lg hover:shadow-indigo-500/40 transition-shadow inline-flex items-center justify-center gap-2"
+                        >
+                          Unlock Whale Pick <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <button className="px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-white hover:bg-white/10 transition-colors">
+                          Details
+                        </button>
+                      </div>
                     </div>
-                    {p.whale ? (
-                      <span className="text-indigo-300 text-xs font-bold tracking-wider">★10 WHALE</span>
-                    ) : (
-                      <span className="text-indigo-300 text-sm tracking-widest">{"★".repeat(p.stars)}</span>
-                    )}
-                  </div>
-
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-indigo-400/40 text-indigo-200 text-[11px] font-bold">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-                      Started
-                    </span>
-                    <span className="text-xs text-slate-500">{p.time}</span>
-                  </div>
-
-                  <div className="flex items-center gap-2 mb-4 text-white">
-                    <span className="text-base font-bold">{p.a}</span>
-                    <span className="text-xs text-slate-500 uppercase">vs</span>
-                    <span className="text-base font-bold">{p.b}</span>
-                  </div>
-
-                  <div className="mb-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[10px] uppercase tracking-wider font-bold text-indigo-200 bg-indigo-500/15 border border-indigo-500/30 px-2 py-1 rounded-md">
-                        Started Pick
-                      </span>
-                      <span className="text-sm font-bold text-white">{p.conf}% Confidence</span>
-                    </div>
-                    <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6]"
-                        style={{ width: `${p.conf}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  <button className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-white hover:bg-white/10 transition-colors">
-                    View Pick
-                  </button>
+                  </Reveal>
                 </div>
-              </Reveal>
-            ))}
-          </div>
+
+                {/* SECONDARY PICKS */}
+                <div className="lg:col-span-5 flex flex-col gap-4">
+                  {rest.map((p, i) => (
+                    <Reveal key={i} delay={(i + 1) * 100}>
+                      <div className="group rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-5 hover:border-indigo-400/30 hover:bg-white/[0.05] transition-all h-full flex flex-col">
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#6366F1] grid place-items-center text-[10px] font-bold text-white">
+                              {p.sport}
+                            </div>
+                            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-300">
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                              Live
+                            </span>
+                          </div>
+                          {p.whale ? (
+                            <span className="text-indigo-300 text-[11px] font-extrabold tracking-wider">★10 WHALE</span>
+                          ) : (
+                            <span className="text-indigo-300 text-sm tracking-widest">{"★".repeat(p.stars)}</span>
+                          )}
+                        </div>
+
+                        <div className="flex items-baseline gap-2 mb-3 text-white">
+                          <span className="text-base font-bold truncate">{p.a}</span>
+                          <span className="text-[10px] text-slate-500 uppercase">vs</span>
+                          <span className="text-sm font-bold text-slate-300 truncate">{p.b}</span>
+                        </div>
+
+                        <div className="text-[11px] text-slate-500 mb-3">{p.time}</div>
+
+                        <div className="mt-auto flex items-center gap-3">
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-1.5">
+                              <span className="text-[10px] uppercase tracking-widest font-bold text-slate-500">Confidence</span>
+                              <span className="text-xs font-extrabold text-white">{p.conf}%</span>
+                            </div>
+                            <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                              <div
+                                className="h-full bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6]"
+                                style={{ width: `${p.conf}%` }}
+                              />
+                            </div>
+                          </div>
+                          <button className="shrink-0 w-9 h-9 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-white hover:bg-indigo-500/20 hover:border-indigo-400/40 transition-colors">
+                            <ArrowRight className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
