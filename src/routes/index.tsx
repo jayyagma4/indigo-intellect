@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, TrendingUp, ShieldCheck, Zap, Trophy, Target, BarChart3 } from "lucide-react";
+import { ArrowRight, Calendar, User, TrendingUp, Zap, BarChart3, Activity, LineChart } from "lucide-react";
 import { PickCard } from "@/components/PickCard";
 import { PricingCard } from "@/components/PricingCard";
 import { StatCounter } from "@/components/StatCounter";
@@ -8,10 +8,10 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sportshandicapper — Win More. Bet Smarter." },
-      { name: "description", content: "Professional sports handicapping service. Expert picks across NFL, NBA, MLB, NHL, NCAAF, NCAAB. Start your free trial — no credit card required." },
-      { property: "og:title", content: "Sportshandicapper — Win More. Bet Smarter." },
-      { property: "og:description", content: "Premium sports picks built on data, not hype." },
+      { title: "Sportshandicapper — Simulation Model Up +Y Over 3 Years" },
+      { name: "description", content: "Exclusive articles, daily picks, and membership access to a proven sports simulation handicapper model. Crush the books without the guesswork." },
+      { property: "og:title", content: "Sportshandicapper — Simulation Handicapper Model" },
+      { property: "og:description", content: "Crush the books without the guesswork. Free trial, no credit card required." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -19,13 +19,41 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const SPORTS = [
-  { name: "NFL", icon: Trophy, desc: "Line value, situational edges, weather modeling." },
-  { name: "NBA", icon: Zap, desc: "Pace, rotation, and rest-adjusted totals." },
-  { name: "MLB", icon: Target, desc: "Starter splits, bullpen fatigue, park factors." },
-  { name: "NHL", icon: ShieldCheck, desc: "Goalie matchups, expected goals, special teams." },
-  { name: "NCAAF", icon: BarChart3, desc: "Coaching tendencies, motivation spots, line moves." },
-  { name: "NCAAB", icon: TrendingUp, desc: "Tempo, efficiency, sharp money tracking." },
+const ARTICLES = [
+  {
+    tag: "MLB",
+    tag2: "MLB Sports Betting",
+    title: "GAME PREVIEW: Texas Rangers vs. Colorado Rockies analysis, best bets",
+    excerpt: "Two teams, one thin-air battlefield, and a bullpen situation that could blow the roof off Coors Field. Get the angles.",
+    author: "Michael Rinner",
+    date: "May 19, 2026",
+    accent: "from-rose-500/30 to-orange-500/20",
+  },
+  {
+    tag: "NBA",
+    tag2: "NBA Sports Betting",
+    title: "GAME PREVIEW: Cleveland Cavaliers vs. New York Knicks analysis, picks",
+    excerpt: "Donovan Mitchell and Jalen Brunson collide in a high-stakes NBA playoff clash. Find a clear edge inside.",
+    author: "Mike Davis",
+    date: "May 19, 2026",
+    accent: "from-indigo-500/30 to-violet-500/20",
+  },
+  {
+    tag: "MLB",
+    tag2: "MLB Sports Betting",
+    title: "GAME PREVIEW: Toronto Blue Jays vs. New York Yankees analysis, bets",
+    excerpt: "After a thrilling 7–6 Yankee win, the Bronx rematch is loaded with star power, bullpen drama, and value.",
+    author: "Michael Rinner",
+    date: "May 19, 2026",
+    accent: "from-sky-500/30 to-cyan-500/20",
+  },
+];
+
+const TOOLS = [
+  { icon: LineChart, name: "Simulation Model", desc: "Monte-Carlo backed projections across every game on the slate." },
+  { icon: Activity, name: "Live Odds", desc: "Real-time line comparison across major sportsbooks." },
+  { icon: BarChart3, name: "Consensus Data", desc: "Track where the public — and the sharps — are betting." },
+  { icon: TrendingUp, name: "Hot Trends", desc: "Streaks, splits, and situational angles updated daily." },
 ];
 
 function HomePage() {
@@ -33,12 +61,10 @@ function HomePage() {
     <div>
       {/* HERO */}
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
-        {/* Floating orbs */}
         <div className="orb h-40 w-40 top-24 left-[8%] opacity-60" style={{ background: "radial-gradient(circle, rgba(99,102,241,0.55), transparent 70%)", animation: "float-slow 8s ease-in-out infinite" }} />
         <div className="orb h-56 w-56 bottom-20 right-[6%] opacity-50" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.5), transparent 70%)", animation: "float-slow 11s ease-in-out infinite" }} />
         <div className="orb h-24 w-24 top-1/2 left-[42%] opacity-40" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.6), transparent 70%)", animation: "float-slow 9s ease-in-out infinite" }} />
 
-        {/* Conic spotlight */}
         <div
           aria-hidden
           className="absolute inset-x-0 top-0 h-[600px] -z-10 opacity-40"
@@ -50,97 +76,114 @@ function HomePage() {
           }}
         />
 
-        <div className="container-x py-24 grid lg:grid-cols-[1.3fr_1fr] gap-16 items-center">
+        <div className="container-x py-24 text-center max-w-5xl mx-auto">
           <Reveal>
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/5 text-xs text-indigo-200 backdrop-blur-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
-                Live picks dropping tonight
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/5 text-xs text-indigo-200 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
+              Proven over 3 seasons · Verified ROI
+            </div>
 
-              <h1 className="mt-6 text-[clamp(3rem,7.5vw,6rem)] font-black leading-[0.95] tracking-[-0.03em] gradient-text glow-text">
-                Win More.<br />Bet Smarter.
-              </h1>
+            <h1 className="mt-6 text-[clamp(2.5rem,6.5vw,5.5rem)] font-black leading-[0.98] tracking-[-0.03em] gradient-text glow-text">
+              Simulation Handicapper Model<br />
+              <span className="text-white">— Up +Y Over 3 Years</span>
+            </h1>
 
-              <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-                The Bloomberg Terminal of sports betting. Expert handicapping, transparent results, premium analysis across every major league.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link to="/packages" className="btn-primary">
-                  Start Free Trial <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link to="/picks" className="btn-secondary">View Today's Picks</Link>
-              </div>
-
-              <p className="mt-6 text-xs text-muted-foreground">
-                No credit card required · Cancel anytime
+            <div className="mt-8 inline-block px-5 py-3 rounded-xl border border-amber-400/25 bg-amber-400/5 backdrop-blur-sm">
+              <p className="text-sm md:text-base font-semibold text-amber-200 tracking-tight">
+                $100 bettor won <span className="text-amber-300">$15,000</span> &nbsp;·&nbsp; $500 bettor won <span className="text-amber-300">$75,000</span> &nbsp;·&nbsp; $1,000 bettor won <span className="text-amber-300">$150,000</span>
               </p>
             </div>
-          </Reveal>
 
-          <Reveal delay={200}>
-            <div className="relative">
-              <div className="absolute -inset-8 -z-10 rounded-3xl animate-pulse" style={{ background: "radial-gradient(closest-side, rgba(99,102,241,0.4), transparent 70%)" }} />
-              <div style={{ animation: "float-slow 7s ease-in-out infinite" }}>
-                <PickCard
-                  sport="NBA"
-                  matchup="Celtics @ Nuggets"
-                  pick="Nuggets -3.5 (Best 5★ play of the week)"
-                  stars={5}
-                  confidence={87}
-                  time="Tonight · 10:00 PM ET"
-                />
-              </div>
-              <div className="mt-4" style={{ animation: "float-slow 9s ease-in-out infinite" }}>
-                <PickCard
-                  sport="NFL"
-                  matchup="Chiefs vs Bills"
-                  pick="Under 47.5"
-                  stars={4}
-                  confidence={72}
-                  time="Sun · 4:25 PM ET"
-                />
-              </div>
+            <p className="mt-7 text-lg text-muted-foreground">
+              Want to crush the books without the guesswork?
+            </p>
+
+            <div className="mt-9 flex justify-center flex-wrap gap-4">
+              <Link to="/packages" className="btn-primary">
+                Join Now <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a href="#articles" className="btn-secondary">See More</a>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* LIVE TICKER */}
-      <section className="border-y border-white/5 bg-white/[0.02] py-3 overflow-hidden">
-        <div className="ticker-track text-xs font-bold uppercase tracking-wider">
-          {Array.from({ length: 2 }).map((_, dup) => (
-            <div key={dup} className="flex items-center gap-12 pr-12">
-              {[
-                ["NBA", "Nuggets -3.5", "+12.4u"],
-                ["NFL", "Chiefs U47.5", "+8.1u"],
-                ["NHL", "Rangers ML", "+5.6u"],
-                ["MLB", "Dodgers -1.5", "+9.3u"],
-                ["NCAAF", "Bama -7", "+14.2u"],
-                ["NCAAB", "Duke -4.5", "+6.8u"],
-              ].map(([s, p, u], i) => (
-                <div key={`${dup}-${i}`} className="flex items-center gap-3">
-                  <span className="text-indigo-300">{s}</span>
-                  <span className="text-slate-300">{p}</span>
-                  <span className="text-emerald-400">{u}</span>
-                  <span className="h-1 w-1 rounded-full bg-white/20" />
-                </div>
-              ))}
+      {/* EXCLUSIVE ARTICLES */}
+      <section id="articles" className="py-24">
+        <div className="container-x">
+          <Reveal>
+            <div className="flex items-end justify-between flex-wrap gap-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Exclusive Articles and Analysis</h2>
+                <p className="mt-2 text-muted-foreground">Expert insights to sharpen your edge.</p>
+              </div>
+              <div className="flex gap-2">
+                <button className="h-9 w-9 rounded-full border border-white/10 grid place-items-center text-muted-foreground hover:text-white hover:border-white/30 transition" aria-label="Previous">‹</button>
+                <button className="h-9 w-9 rounded-full border border-indigo-400/40 grid place-items-center text-indigo-300 hover:bg-indigo-500/10 transition" aria-label="Next">›</button>
+              </div>
             </div>
-          ))}
+          </Reveal>
+
+          <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ARTICLES.map((a, i) => (
+              <Reveal key={a.title} delay={i * 100}>
+                <article className="card-premium overflow-hidden h-full flex flex-col">
+                  <div className={`relative h-44 bg-gradient-to-br ${a.accent} grid place-items-center overflow-hidden`}>
+                    <div className="absolute inset-0 opacity-30" style={{
+                      backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)",
+                      backgroundSize: "24px 24px",
+                    }} />
+                    <span className="text-5xl font-black text-white/15 tracking-tight">{a.tag}</span>
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-500/10 px-2 py-1 rounded-md">{a.tag}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-500/10 px-2 py-1 rounded-md">{a.tag2}</span>
+                    </div>
+                    <h3 className="mt-3 text-base font-bold leading-snug tracking-tight">{a.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{a.excerpt}</p>
+                    <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1.5"><User className="h-3 w-3" />{a.author}</span>
+                      <span className="flex items-center gap-1.5"><Calendar className="h-3 w-3" />{a.date}</span>
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* ACTIVE PICKS */}
+      <section className="py-20">
+        <div className="container-x">
+          <Reveal>
+            <div className="flex items-end justify-between flex-wrap gap-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Active Picks</h2>
+                <p className="mt-2 text-muted-foreground">Current picks — log in to see full details.</p>
+              </div>
+              <Link to="/picks" className="btn-secondary !py-2 !px-5 text-sm">View All Picks</Link>
+            </div>
+          </Reveal>
 
-      {/* TRUST BAR */}
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
+            <Reveal delay={0}><PickCard sport="MLB" matchup="Atlanta Braves vs Miami Marlins" pick="Braves -1.5" stars={5} confidence={78} time="May 19 · 6:40 PM ET" /></Reveal>
+            <Reveal delay={80}><PickCard sport="MLB" matchup="Blue Jays vs Yankees" pick="Locked pick" stars={5} confidence={93} locked time="May 19 · 7:05 PM ET" /></Reveal>
+            <Reveal delay={160}><PickCard sport="NBA" matchup="Cavaliers vs Knicks" pick="Knicks +4.5" stars={5} confidence={76} time="May 19 · 8:00 PM ET" /></Reveal>
+            <Reveal delay={240}><PickCard sport="MLB" matchup="Texas Rangers vs Colorado Rockies" pick="Locked pick" stars={5} confidence={94} locked time="May 19 · 8:40 PM ET" /></Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST STATS */}
       <section className="border-y border-white/5 bg-white/[0.015]">
         <div className="container-x py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { v: <StatCounter end={1248} suffix="+" />, l: "Total Units Won" },
-            { v: <StatCounter end={18} suffix=" yrs" />, l: "Track Record" },
+            { v: <StatCounter end={3} suffix=" yrs" />, l: "Verified Track Record" },
             { v: <StatCounter end={6} />, l: "Sports Covered" },
-            { v: <><StatCounter end={62.4} decimals={1} suffix="%" /></>, l: "Verified Win Rate" },
+            { v: <StatCounter end={62.4} decimals={1} suffix="%" />, l: "Win Rate" },
           ].map((s, i) => (
             <Reveal key={i} delay={i * 80}>
               <div className="text-center">
@@ -152,113 +195,73 @@ function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how" className="py-28">
+      {/* MEMBERSHIP PACKAGES */}
+      <section className="py-24">
         <div className="container-x">
           <Reveal>
             <div className="max-w-2xl">
-              <p className="eyebrow">How it works</p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">Three steps to sharper bets.</h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Membership Packages</h2>
+              <p className="mt-2 text-muted-foreground">Start free. Upgrade anytime. Cancel anytime.</p>
             </div>
           </Reveal>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
-            {[
-              { n: "01", t: "Pick your package", d: "Choose a plan that fits your volume — from a free trial to all-access premium." },
-              { n: "02", t: "Receive expert picks", d: "Get verified picks delivered to your inbox and dashboard before lines move." },
-              { n: "03", t: "Follow and profit", d: "Track every play with transparent unit accounting. No guessing, no hype." },
-            ].map((s, i) => (
-              <Reveal key={s.n} delay={i * 120}>
-                <div className="card-premium p-8 h-full">
-                  <div className="h-[3px] w-12 mb-6" style={{ background: "var(--gradient-primary)" }} />
-                  <div className="text-5xl font-black gradient-text tracking-tight">{s.n}</div>
-                  <h3 className="mt-4 text-xl font-bold">{s.t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING */}
-      <section className="py-28">
-        <div className="container-x">
-          <Reveal>
-            <div className="max-w-2xl">
-              <p className="eyebrow">Packages</p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">Built for every bettor.</h2>
-              <p className="mt-4 text-muted-foreground">From a no-risk trial to full access across every league. Cancel anytime.</p>
-            </div>
-          </Reveal>
-
-          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Reveal delay={0}>
-              <PricingCard name="Free Trial" price="$0" period="7 days" tagline="Try the service risk-free."
-                features={["1 expert pick per day", "Email delivery", "Single sport access", "No credit card"]}
-                cta="Start free" />
+              <PricingCard name="7 Days Access" price="FREE" period="trial" tagline="No credit card needed."
+                features={["Full access for 7 days", "All sport picks", "Simulation model access", "Daily consensus data", "No credit card required"]}
+                cta="Start Free Trial" />
             </Reveal>
-            <Reveal delay={100}>
-              <PricingCard name="Weekly" price="$79" period="week" tagline="All sports, all picks, one week."
-                features={["All daily picks", "All sports", "5★ premium plays", "Member dashboard"]} />
+            <Reveal delay={80}>
+              <PricingCard name="1 Week Access" price="$24.99" period="week" tagline="Try a full week of action."
+                features={["All sport picks", "Simulation model access", "Daily consensus data", "Betting trends"]} />
             </Reveal>
-            <Reveal delay={200}>
-              <PricingCard name="Monthly" price="$249" period="month" tagline="The most popular plan." highlight
-                features={["Everything in Weekly", "Live in-game picks", "Priority pick alerts", "Direct analyst Q&A"]}
-                cta="Get Monthly" />
+            <Reveal delay={160}>
+              <PricingCard name="2 Weeks Access" price="$49.99" period="2 weeks" tagline="Save vs single week."
+                features={["All sport picks", "Simulation model access", "Daily consensus data", "Betting trends", "Save $25 vs weekly"]} />
             </Reveal>
-            <Reveal delay={300}>
-              <PricingCard name="Premium Season" price="$899" period="season" tagline="Full season, all access."
-                features={["Everything in Monthly", "Futures & props", "1:1 strategy calls", "Best-price guarantee"]} />
+            <Reveal delay={240}>
+              <PricingCard name="1 Month Access" price="$99.99" period="month" tagline="The most popular plan." highlight
+                features={["All sport picks", "Simulation model access", "Daily consensus data", "Betting trends", "24/7 support"]}
+                cta="Get Started" />
             </Reveal>
+            <Reveal delay={320}>
+              <PricingCard name="3 Months Access" price="$199.99" period="3 months" tagline="Cover a full season window."
+                features={["All sport picks", "Simulation model access", "Daily consensus data", "Betting trends", "24/7 support"]} />
+            </Reveal>
+            <Reveal delay={400}>
+              <PricingCard name="6 Months Access" price="$299.99" period="6 months" tagline="Best long-term value."
+                features={["All sport picks", "Simulation model access", "Daily consensus data", "Betting trends", "24/7 support"]} />
+            </Reveal>
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link to="/packages" className="text-sm text-indigo-300 hover:text-indigo-200 underline-offset-4 hover:underline">
+              View all packages & pricing →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* FEATURED PICKS */}
-      <section className="py-28">
-        <div className="container-x">
-          <Reveal>
-            <div className="flex items-end justify-between flex-wrap gap-6 max-w-3xl">
-              <div>
-                <p className="eyebrow">Featured picks</p>
-                <h2 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">Tonight's board.</h2>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Reveal delay={0}><PickCard sport="NBA" matchup="Lakers @ Warriors" pick="Warriors -2.5" stars={4} confidence={78} /></Reveal>
-            <Reveal delay={80}><PickCard sport="NFL" matchup="Eagles vs Cowboys" pick="Over 49.5" stars={3} confidence={68} time="Sun 8:20 PM ET" /></Reveal>
-            <Reveal delay={160}><PickCard sport="NHL" matchup="Rangers @ Bruins" pick="Rangers ML +120" stars={4} confidence={74} /></Reveal>
-            <Reveal delay={240}><PickCard sport="MLB" matchup="Dodgers @ Yankees" pick="Locked pick" stars={5} confidence={89} locked /></Reveal>
-            <Reveal delay={320}><PickCard sport="NCAAF" matchup="Alabama vs Georgia" pick="Locked pick" stars={5} confidence={84} locked time="Sat 7:30 PM ET" /></Reveal>
-            <Reveal delay={400}><PickCard sport="NCAAB" matchup="Duke @ UNC" pick="Locked pick" stars={4} confidence={76} locked /></Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* SPORTS COVERAGE */}
-      <section className="py-28">
+      {/* DATA & TOOLS */}
+      <section className="py-24">
         <div className="container-x">
           <Reveal>
             <div className="max-w-2xl">
-              <p className="eyebrow">Sports coverage</p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">Every major league. Every angle.</h2>
+              <p className="eyebrow">Data & tools</p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Everything you need to beat the books.</h2>
             </div>
           </Reveal>
 
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SPORTS.map((s, i) => (
-              <Reveal key={s.name} delay={i * 70}>
-                <div className="card-premium p-6 flex gap-4 items-start h-full">
-                  <div className="h-11 w-11 shrink-0 rounded-xl grid place-items-center" style={{ background: "rgba(99,102,241,0.12)", border: "1px solid rgba(99,102,241,0.25)" }}>
-                    <s.icon className="h-5 w-5 text-indigo-300" strokeWidth={1.75} />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TOOLS.map((t, i) => (
+              <Reveal key={t.name} delay={i * 90}>
+                <div className="card-premium p-6 h-full relative">
+                  <span className="absolute top-4 right-4 text-[10px] uppercase tracking-wider font-bold text-indigo-300 bg-indigo-500/15 px-2 py-0.5 rounded-full">Soon</span>
+                  <div className="h-11 w-11 rounded-xl grid place-items-center" style={{ background: "rgba(99,102,241,0.12)", border: "1px solid rgba(99,102,241,0.25)" }}>
+                    <t.icon className="h-5 w-5 text-indigo-300" strokeWidth={1.75} />
                   </div>
-                  <div>
-                    <h3 className="font-bold tracking-tight">{s.name}</h3>
-                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{s.desc}</p>
-                  </div>
+                  <h3 className="mt-4 font-bold tracking-tight">{t.name}</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{t.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -266,64 +269,45 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-28">
-        <div className="container-x">
+      {/* ABOUT */}
+      <section id="about" className="py-24">
+        <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
           <Reveal>
-            <div className="max-w-2xl">
-              <p className="eyebrow">Members say</p>
-              <h2 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">Verified results, real bettors.</h2>
-            </div>
-          </Reveal>
-
-          <div className="mt-14 grid md:grid-cols-3 gap-6">
-            {[
-              { n: "Marcus", t: "Monthly", q: "Up 42 units in my first three months. The transparency is unreal — every pick is logged and graded." },
-              { n: "Sarah", t: "Premium Season", q: "I've used three handicappers before this. Nobody else shows the actual math behind their plays." },
-              { n: "Devon", t: "Weekly", q: "The 5-star plays have paid for the package twice over. Worth every dollar." },
-            ].map((t, i) => (
-              <Reveal key={t.n} delay={i * 100}>
-                <div className="card-premium p-7 h-full">
-                  <div className="text-indigo-300 text-2xl leading-none">"</div>
-                  <p className="mt-2 text-slate-200 leading-relaxed">{t.q}</p>
-                  <div className="mt-6 flex items-center gap-3">
-                    <div className="h-9 w-9 rounded-full grid place-items-center text-sm font-bold text-white" style={{ background: "var(--gradient-primary)" }}>
-                      {t.n[0]}
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold">{t.n}</p>
-                      <p className="text-xs text-muted-foreground">{t.t} member</p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="py-28">
-        <div className="container-x">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-3xl px-8 md:px-16 py-20 text-center border border-indigo-500/20" style={{
-              background: "linear-gradient(180deg, rgba(13,18,36,0.9), rgba(10,12,28,0.9))",
-            }}>
-              <div className="absolute inset-0 -z-10" style={{
-                background: "radial-gradient(600px 300px at 50% 0%, rgba(99,102,241,0.35), transparent 70%)",
-              }} />
-              <p className="eyebrow">Ready to bet smarter?</p>
-              <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-[-0.02em] gradient-text glow-text">
-                Join thousands turning data into wins.
-              </h2>
-              <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
-                Get your first week of expert picks free. No credit card. No catch.
+            <div>
+              <p className="eyebrow">About us</p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">Built by bettors. Powered by simulation.</h2>
+              <p className="mt-5 text-muted-foreground leading-relaxed">
+                We built our simulation handicapper model to remove emotion from betting. Every pick is the output of millions of game iterations modeled against live market lines — so the only thing left to do is follow the edge.
               </p>
-              <div className="mt-9 flex justify-center gap-4 flex-wrap">
-                <Link to="/packages" className="btn-primary">Start Free Trial <ArrowRight className="h-4 w-4" /></Link>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Three years of verified results, transparent unit accounting, and a team of analysts who actually bet the plays we publish.
+              </p>
+              <div className="mt-8 flex gap-4">
+                <Link to="/packages" className="btn-primary">Join Now <ArrowRight className="h-4 w-4" /></Link>
                 <Link to="/picks" className="btn-secondary">See Today's Picks</Link>
               </div>
-              <p className="mt-4 text-xs text-muted-foreground">Free trial available — no credit card required.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={160}>
+            <div className="card-premium p-8 relative overflow-hidden">
+              <div className="absolute inset-0 -z-10 opacity-40" style={{ background: "radial-gradient(closest-side, rgba(99,102,241,0.35), transparent 70%)" }} />
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { v: "62.4%", l: "Win rate" },
+                  { v: "+1,248u", l: "Total profit" },
+                  { v: "3 yrs", l: "Verified" },
+                  { v: "6", l: "Sports" },
+                ].map((s) => (
+                  <div key={s.l} className="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+                    <div className="text-2xl font-black gradient-text">{s.v}</div>
+                    <div className="eyebrow mt-1">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 flex items-center gap-3 text-xs text-muted-foreground">
+                <Zap className="h-3.5 w-3.5 text-indigo-300" />
+                Information is for news and entertainment purposes only. Past performance is not a guarantee of future results.
+              </div>
             </div>
           </Reveal>
         </div>
