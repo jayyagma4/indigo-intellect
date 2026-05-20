@@ -107,11 +107,7 @@
   body {
     font-family: var(--font-sans);
     color: var(--color-foreground);
-    background:
-      radial-gradient(1200px 600px at 80% -10%, rgba(99, 102, 241, 0.18), transparent 60%),
-      radial-gradient(900px 500px at 0% 30%, rgba(59, 130, 246, 0.12), transparent 60%),
-      linear-gradient(180deg, #060818 0%, #0A0A14 100%);
-    background-attachment: fixed;
+    background: transparent;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "cv11", "ss01";
   }
