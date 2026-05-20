@@ -167,61 +167,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* LIVE ANALYTICS FEED — horizontal pick rail */}
-      <section className="py-16">
-        <div className="container-x">
-          <Reveal>
-            <div className="flex items-end justify-between mb-8 gap-4 flex-wrap">
-              <div className="space-y-1">
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Live Analytics Feed</h2>
-                <p className="text-slate-500 text-sm">Real-time line movements and edge alerts.</p>
-              </div>
-              <Link to="/picks" className="text-sm text-indigo-300 hover:text-indigo-200 font-medium">
-                View all picks →
-              </Link>
-            </div>
-          </Reveal>
-
-          <div className="flex gap-6 overflow-x-auto pb-4 no-scrollbar -mx-6 px-6">
-            {[
-              { sport: "NBA", time: "STARTS IN 42M", edge: "+6.8%", a: "Lakers", b: "Celtics", line: "-4.5", verdict: "Lakers Spread", color: "bg-blue-500/20 text-blue-300" },
-              { sport: "NHL", time: "LIVE 2ND", edge: "+4.1%", a: "Rangers", b: "Devils", line: "ML", verdict: "Over 6.5 Goals", color: "bg-violet-500/20 text-violet-300" },
-              { sport: "MLB", time: "TOMORROW", edge: "+8.2%", a: "Dodgers", b: "Giants", line: "-1.5", verdict: "Dodgers -1.5", color: "bg-sky-500/20 text-sky-300" },
-              { sport: "NFL", time: "SUN 1PM ET", edge: "+5.4%", a: "Bills", b: "Jets", line: "-3.5", verdict: "Bills Spread", color: "bg-indigo-500/20 text-indigo-300" },
-            ].map((c, i) => (
-              <Reveal key={c.sport + i} delay={i * 80}>
-                <div className="min-w-[340px] flex-shrink-0 backdrop-blur-md bg-white/[0.03] border border-white/10 rounded-3xl p-6 hover:bg-white/[0.05] hover:border-white/20 transition-all cursor-pointer">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="flex items-center gap-2.5">
-                      <div className={`w-9 h-9 rounded-lg ${c.color} grid place-items-center font-bold text-xs`}>
-                        {c.sport}
-                      </div>
-                      <span className="text-[11px] font-bold text-slate-500 tracking-wider">{c.time}</span>
-                    </div>
-                    <span className="text-indigo-300 text-[11px] font-bold bg-indigo-500/10 px-2 py-1 rounded">
-                      {c.edge} EDGE
-                    </span>
-                  </div>
-                  <div className="space-y-3 mb-6">
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg font-bold text-white">{c.a}</span>
-                      <span className="text-slate-400 font-medium">{c.line}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg font-bold text-white">{c.b}</span>
-                      <span className="text-white font-bold">+{c.line.replace("-", "")}</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center pt-4 border-t border-white/5">
-                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Model Verdict</div>
-                    <div className="text-white font-bold text-sm">{c.verdict}</div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* EXCLUSIVE ARTICLES */}
       <section id="articles" className="py-20">
