@@ -33,7 +33,7 @@ export function PickCard({ sport, matchup, pick, stars, confidence, locked, time
               key={i}
               className={`h-3.5 w-3.5 ${i < stars ? "text-indigo-400" : "text-white/10"}`}
               fill={i < stars ? "currentColor" : "none"}
-              style={i < stars ? { filter: "drop-shadow(0 0 6px rgba(99,102,241,0.6))" } : undefined}
+              style={i < stars ? { filter: "drop-shadow(0 0 6px rgba(14,165,233,0.6))" } : undefined}
             />
           ))}
           <span className="ml-2 text-[11px] uppercase tracking-wider text-muted-foreground font-bold">{stars}★ play</span>
@@ -47,7 +47,7 @@ export function PickCard({ sport, matchup, pick, stars, confidence, locked, time
           <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
             <div
               className="h-full rounded-full"
-              style={{ width: `${confidence}%`, background: "var(--gradient-primary)", boxShadow: "0 0 12px rgba(99,102,241,0.6)" }}
+              style={{ width: `${confidence}%`, background: "var(--gradient-primary)", boxShadow: "0 0 12px rgba(14,165,233,0.6)" }}
             />
           </div>
         </div>
