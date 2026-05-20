@@ -168,61 +168,118 @@ function HomePage() {
       </section>
 
 
-      {/* EXCLUSIVE ARTICLES */}
+      {/* EXCLUSIVE ARTICLES — Spotlight layout */}
       <section id="articles" className="py-20">
         <div className="container-x">
           <Reveal>
             <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
               <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 text-[10px] font-bold tracking-[0.2em] uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                  Editorial
+                </div>
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
                   Exclusive Articles and Analysis
                 </h2>
                 <p className="text-slate-500 text-sm">Expert insights to sharpen your edge</p>
               </div>
-              <div className="flex items-center gap-2">
-                <button className="w-10 h-10 rounded-full border border-indigo-400/40 text-indigo-300 hover:bg-indigo-500/10 transition-colors grid place-items-center">‹</button>
-                <button className="w-10 h-10 rounded-full border border-indigo-400/40 text-indigo-300 hover:bg-indigo-500/10 transition-colors grid place-items-center">›</button>
-              </div>
+              <Link
+                to="/picks"
+                className="px-5 py-2.5 rounded-full border border-indigo-400/40 text-indigo-200 text-sm font-bold hover:bg-indigo-500/10 transition-colors inline-flex items-center gap-2"
+              >
+                All Articles <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ARTICLES.map((a, i) => (
-              <Reveal key={a.title} delay={i * 100}>
-                <article className="group rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md hover:border-indigo-400/30 hover:bg-white/[0.05] transition-all h-full flex flex-col">
-                  <div className={`relative h-48 bg-gradient-to-br ${a.accent} overflow-hidden`}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#07091A] via-transparent to-transparent" />
-                    <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 30% 40%, rgba(99,102,241,0.4), transparent 60%), radial-gradient(circle at 70% 60%, rgba(139,92,246,0.4), transparent 60%)" }} />
+          <div className="grid lg:grid-cols-12 gap-6">
+            {/* FEATURED ARTICLE */}
+            <Reveal delay={0}>
+              <article className="group lg:col-span-7 relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md hover:border-indigo-400/40 transition-all h-full flex flex-col min-h-[460px]">
+                <div className={`relative h-64 md:h-80 bg-gradient-to-br ${ARTICLES[0].accent} overflow-hidden`}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07091A] via-[#07091A]/40 to-transparent" />
+                  <div
+                    className="absolute inset-0 opacity-40"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle at 25% 30%, rgba(99,102,241,0.5), transparent 55%), radial-gradient(circle at 75% 70%, rgba(139,92,246,0.5), transparent 55%)",
+                    }}
+                  />
+                  <div className="absolute top-5 left-5 flex items-center gap-2">
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-gradient-to-r from-[#3B82F6] to-[#6366F1] px-3 py-1.5 rounded-md shadow-lg shadow-indigo-500/30">
+                      ★ Featured
+                    </span>
+                    <span className="text-[10px] uppercase tracking-wider font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-md backdrop-blur-md">
+                      {ARTICLES[0].tag}
+                    </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex gap-2 mb-3">
-                      <span className="text-[10px] uppercase tracking-wider font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-md">
-                        {a.tag}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-wider font-bold text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-2.5 py-1 rounded-md">
+                </div>
+                <div className="p-8 md:p-10 flex flex-col flex-1 -mt-8 relative z-10">
+                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-indigo-300 mb-3">
+                    {ARTICLES[0].tag2} · {ARTICLES[0].date}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-4 group-hover:text-indigo-200 transition-colors tracking-tight">
+                    {ARTICLES[0].title}
+                  </h3>
+                  <p className="text-base text-slate-400 leading-relaxed mb-6 line-clamp-3">
+                    {ARTICLES[0].excerpt}
+                  </p>
+                  <div className="mt-auto flex items-center justify-between pt-5 border-t border-white/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] grid place-items-center text-sm font-bold text-white">
+                        {ARTICLES[0].author.charAt(0)}
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-white">{ARTICLES[0].author}</div>
+                        <div className="text-[11px] text-slate-500">Senior Analyst</div>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center gap-2 text-indigo-300 text-sm font-bold group-hover:gap-3 transition-all">
+                      Read Story <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+
+            {/* SECONDARY ARTICLES */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              {ARTICLES.slice(1).map((a, i) => (
+                <Reveal key={a.title} delay={(i + 1) * 120}>
+                  <article className="group flex gap-5 rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-md hover:border-indigo-400/30 hover:bg-white/[0.05] transition-all p-4 h-full">
+                    <div className={`relative w-32 md:w-40 shrink-0 rounded-xl bg-gradient-to-br ${a.accent} overflow-hidden`}>
+                      <div
+                        className="absolute inset-0 opacity-40"
+                        style={{
+                          backgroundImage:
+                            "radial-gradient(circle at 50% 50%, rgba(99,102,241,0.5), transparent 70%)",
+                        }}
+                      />
+                      <div className="absolute bottom-2 left-2">
+                        <span className="text-[9px] uppercase tracking-wider font-bold text-white bg-black/40 backdrop-blur-md border border-white/10 px-2 py-0.5 rounded">
+                          {a.tag}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col flex-1 min-w-0 py-1">
+                      <span className="text-[10px] uppercase tracking-[0.18em] font-bold text-indigo-300 mb-2">
                         {a.tag2}
                       </span>
-                    </div>
-                    <h3 className="text-base font-bold text-white leading-snug mb-2 line-clamp-2 group-hover:text-indigo-200 transition-colors">
-                      May 19th, 2026 {a.title}
-                    </h3>
-                    <p className="text-sm text-slate-400 leading-relaxed line-clamp-2 mb-5">{a.excerpt}</p>
-                    <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/5">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] grid place-items-center text-[11px] font-bold text-white">
-                          {a.author.charAt(0)}
-                        </div>
-                        <span className="text-xs font-medium text-slate-300">{a.author}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                        <Calendar className="w-3.5 h-3.5" />
-                        {a.date}
+                      <h3 className="text-base font-bold text-white leading-snug mb-2 line-clamp-2 group-hover:text-indigo-200 transition-colors">
+                        {a.title}
+                      </h3>
+                      <div className="mt-auto flex items-center gap-3 text-[11px] text-slate-500">
+                        <span className="font-medium text-slate-400">{a.author}</span>
+                        <span className="w-1 h-1 rounded-full bg-slate-600" />
+                        <span className="inline-flex items-center gap-1">
+                          <Calendar className="w-3 h-3" /> {a.date}
+                        </span>
                       </div>
                     </div>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
