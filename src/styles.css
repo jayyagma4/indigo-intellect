@@ -53,8 +53,8 @@
     to { opacity: 1; transform: translateY(0); }
   }
   @keyframes glow-pulse {
-    0%, 100% { box-shadow: 0 0 24px rgba(99, 102, 241, 0.25); }
-    50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.5); }
+    0%, 100% { box-shadow: 0 0 24px rgba(14, 165, 233, 0.25); }
+    50% { box-shadow: 0 0 40px rgba(14, 165, 233, 0.5); }
   }
 }
 
@@ -124,7 +124,7 @@
   }
 
   ::selection {
-    background: rgba(99, 102, 241, 0.35);
+    background: rgba(14, 165, 233, 0.35);
     color: #fff;
   }
 }
@@ -148,12 +148,12 @@
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: -0.01em;
-    box-shadow: 0 8px 24px -8px rgba(99, 102, 241, 0.6);
+    box-shadow: 0 8px 24px -8px rgba(14, 165, 233, 0.6);
     transition: transform 0.2s ease, box-shadow 0.3s ease;
   }
   .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 0 32px rgba(99, 102, 241, 0.55), 0 12px 32px -8px rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 32px rgba(14, 165, 233, 0.55), 0 12px 32px -8px rgba(59, 130, 246, 0.6);
   }
 
   .btn-secondary {
@@ -164,7 +164,7 @@
     padding: 0.875rem 1.75rem;
     border-radius: 9999px;
     background: transparent;
-    border: 1px solid rgba(99, 102, 241, 0.5);
+    border: 1px solid rgba(14, 165, 233, 0.5);
     color: white;
     font-weight: 500;
     font-size: 0.95rem;
@@ -173,20 +173,20 @@
   .btn-secondary:hover {
     background: var(--gradient-primary);
     border-color: transparent;
-    box-shadow: 0 0 24px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 0 24px rgba(14, 165, 233, 0.35);
   }
 
   .card-premium {
     position: relative;
     background: linear-gradient(180deg, rgba(13, 18, 36, 0.9), rgba(10, 12, 28, 0.9));
-    border: 1px solid rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(14, 165, 233, 0.12);
     border-radius: 16px;
     box-shadow: var(--shadow-card);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .card-premium:hover {
     transform: translateY(-3px);
-    border-color: rgba(99, 102, 241, 0.35);
+    border-color: rgba(14, 165, 233, 0.35);
     box-shadow: var(--shadow-card-hover);
   }
 
@@ -199,7 +199,7 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 40px rgba(99, 102, 241, 0.45);
+    text-shadow: 0 0 40px rgba(14, 165, 233, 0.45);
   }
 
   .gradient-text {
@@ -212,7 +212,7 @@
   .divider-glow {
     height: 1px;
     width: 100%;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.4), transparent);
   }
 
   /* Aurora animated background */
@@ -226,7 +226,7 @@
   .aurora-1 {
     width: 720px; height: 720px;
     top: -200px; left: -160px;
-    background: radial-gradient(circle, #6366F1 0%, transparent 60%);
+    background: radial-gradient(circle, #1E90FF 0%, transparent 60%);
     animation: aurora-float-1 22s ease-in-out infinite;
   .orb {
     position: absolute;
@@ -241,14 +241,14 @@
   .aurora-2 {
     width: 640px; height: 640px;
     top: 20%; right: -180px;
-    background: radial-gradient(circle, #3B82F6 0%, transparent 60%);
+    background: radial-gradient(circle, #22D3EE 0%, transparent 60%);
     animation: aurora-float-2 26s ease-in-out infinite;
     opacity: 0.45;
   }
   .aurora-3 {
     width: 560px; height: 560px;
     bottom: -180px; left: 30%;
-    background: radial-gradient(circle, #8B5CF6 0%, transparent 60%);
+    background: radial-gradient(circle, #0EA5E9 0%, transparent 60%);
     animation: aurora-float-3 30s ease-in-out infinite;
     opacity: 0.4;
   }
@@ -264,11 +264,11 @@
     position: absolute;
     inset: -20%;
     background: conic-gradient(from 0deg at 50% 50%,
-      rgba(99,102,241,0) 0deg,
-      rgba(99,102,241,0.18) 60deg,
-      rgba(139,92,246,0.12) 140deg,
-      rgba(59,130,246,0.18) 220deg,
-      rgba(99,102,241,0) 360deg);
+      rgba(14,165,233,0) 0deg,
+      rgba(14,165,233,0.18) 60deg,
+      rgba(34,211,238,0.12) 140deg,
+      rgba(30,144,255,0.18) 220deg,
+      rgba(14,165,233,0) 360deg);
     filter: blur(60px);
     animation: spin-slow 40s linear infinite;
     opacity: 0.55;
@@ -290,7 +290,7 @@
     right: -20%;
     top: -40%;
     height: 60%;
-    background: linear-gradient(180deg, transparent, rgba(99,102,241,0.10), transparent);
+    background: linear-gradient(180deg, transparent, rgba(14,165,233,0.10), transparent);
     transform: rotate(8deg);
     filter: blur(20px);
     animation: scan-move 14s ease-in-out infinite;
