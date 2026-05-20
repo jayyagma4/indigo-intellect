@@ -1,14 +1,12 @@
-## Swap site logo to new Sports Handicapper image
+## Increase logo sizes without expanding header/footer containers
 
-Replace the current logo with the newly uploaded one across the nav and footer.
+### Header (SiteNav.tsx)
+- Increase logo height from `h-20 md:h-24` to `h-24 md:h-28` (or similar step up).
+- Increase the negative vertical margin on the logo link from `-my-6` to `-my-8` (or proportional) so the taller logo visually overflows the nav bar rather than pushing it taller.
+- Keep nav padding (`py-2`) and all other styling unchanged — only the logo scales and the negative margin absorbs the extra height.
 
-### Steps
+### Footer (SiteFooter.tsx)
+- Increase logo height from `h-12` to `h-14` or `h-16`.
+- No other changes needed.
 
-1. Copy `user-uploads://Sports-Handicappers-2.png` to `src/assets/logo.png` (overwrite), so all existing `import logo from "@/assets/logo.png"` references pick it up automatically.
-2. No code changes needed in `SiteNav.tsx` or `SiteFooter.tsx` — they already import from that path with the current sizing you approved.
-3. Verify in the preview that the new logo renders at the right size in the header and footer.
-
-### Notes
-
-- The new logo has a white/transparent background with a bright blue "SPORTS HANDICAPPER" badge — it should sit cleanly on the dark nav.
-- If after the swap the glow/drop-shadow tint (currently purple) clashes with the blue logo, we can adjust it in a follow-up.
+This keeps the frosted-glass header bar the same height while the logo pops more.

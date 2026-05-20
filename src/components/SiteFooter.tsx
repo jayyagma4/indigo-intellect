@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <Link to="/" className="inline-block">
-              <img src={logo} alt="Sportshandicapper" className="h-12 w-auto object-contain" />
+              <img src={logo} alt="Sportshandicapper" className="h-16 w-auto object-contain" />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
               Expert sports analysis and verified picks across the major leagues. Built for serious bettors who demand data over hype.
