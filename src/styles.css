@@ -217,7 +217,16 @@
     top: -200px; left: -160px;
     background: radial-gradient(circle, #6366F1 0%, transparent 60%);
     animation: aurora-float-1 22s ease-in-out infinite;
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(40px);
+    pointer-events: none;
   }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
   .aurora-2 {
     width: 640px; height: 640px;
     top: 20%; right: -180px;
@@ -287,12 +296,6 @@
     animation: ticker 40s linear infinite;
   }
 
-  .orb {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(40px);
-    pointer-events: none;
-  }
 }
 
 @keyframes aurora-float-1 {
