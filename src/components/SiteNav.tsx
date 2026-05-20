@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Zap, ChevronDown, BarChart3, ArrowRight } from "lucide-react";
+import { ChevronDown, BarChart3, ArrowRight } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function SiteNav() {
   const { location } = useRouterState();
@@ -9,13 +10,12 @@ export function SiteNav() {
     <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
       <nav className="flex items-center justify-between px-6 py-3 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-2xl shadow-indigo-500/10">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#6366F1] flex items-center justify-center shadow-lg shadow-blue-500/20">
-            <Zap className="w-5 h-5 text-white" strokeWidth={2.5} />
-          </div>
-          <span className="text-lg font-bold text-white tracking-tight font-display">
-            Sportshandicapper
-          </span>
+        <Link to="/" className="flex items-center shrink-0">
+          <img
+            src={logo}
+            alt="Sportshandicapper"
+            className="h-11 md:h-12 w-auto object-contain drop-shadow-[0_4px_20px_rgba(59,130,246,0.35)]"
+          />
         </Link>
 
         {/* Pill-grouped nav */}

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Activity } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function SiteFooter() {
   return (
@@ -7,13 +7,8 @@ export function SiteFooter() {
       <div className="container-x py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg grid place-items-center" style={{ background: "var(--gradient-primary)" }}>
-                <Activity className="h-4 w-4 text-white" strokeWidth={2.5} />
-              </div>
-              <span className="font-semibold text-white">
-                Sports<span className="text-indigo-300">handicapper</span>
-              </span>
+            <Link to="/" className="inline-block">
+              <img src={logo} alt="Sportshandicapper" className="h-12 w-auto object-contain" />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
               Expert sports analysis and verified picks across the major leagues. Built for serious bettors who demand data over hype.
