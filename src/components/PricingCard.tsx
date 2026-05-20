@@ -18,8 +18,8 @@ export function PricingCard({ name, price, period, tagline, features, highlight,
       style={
         highlight
           ? {
-              borderColor: "rgba(99,102,241,0.5)",
-              boxShadow: "0 0 0 1px rgba(99,102,241,0.4), 0 20px 60px -20px rgba(99,102,241,0.5)",
+              borderColor: "rgba(14,165,233,0.5)",
+              boxShadow: "0 0 0 1px rgba(14,165,233,0.4), 0 20px 60px -20px rgba(14,165,233,0.5)",
             }
           : undefined
       }

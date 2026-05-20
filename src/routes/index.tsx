@@ -78,7 +78,7 @@ function HomePage() {
               <Reveal delay={100}>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] text-white">
                   Betting{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E90FF] via-[#0EA5E9] to-[#22D3EE]">
                     Intelligence
                   </span>{" "}
                   At Scale.
@@ -95,7 +95,7 @@ function HomePage() {
                 <div className="flex flex-wrap items-center gap-4 pt-2">
                   <Link
                     to="/packages"
-                    className="px-7 py-3.5 bg-gradient-to-r from-[#3B82F6] to-[#6366F1] rounded-2xl font-bold text-base text-white shadow-xl shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 inline-flex items-center gap-2"
+                    className="px-7 py-3.5 bg-gradient-to-r from-[#1E90FF] to-[#0EA5E9] rounded-2xl font-bold text-base text-white shadow-xl shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 inline-flex items-center gap-2"
                   >
                     Get Started Today <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -129,17 +129,17 @@ function HomePage() {
                           <span className="text-white font-bold">450 Units</span>
                         </div>
                         <div className="h-2 bg-white/5 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-[#3B82F6] to-[#6366F1] w-[65%]" />
+                          <div className="h-full bg-gradient-to-r from-[#1E90FF] to-[#0EA5E9] w-[65%]" />
                         </div>
                       </div>
 
                       <div>
                         <div className="flex justify-between text-sm mb-2.5">
                           <span className="text-slate-400 font-medium">Projected Win Rate</span>
-                          <span className="text-[#6366F1] font-bold">58.4%</span>
+                          <span className="text-[#0EA5E9] font-bold">58.4%</span>
                         </div>
                         <div className="h-2 bg-white/5 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] w-[78%]" />
+                          <div className="h-full bg-gradient-to-r from-[#0EA5E9] to-[#22D3EE] w-[78%]" />
                         </div>
                       </div>
 
@@ -203,11 +203,11 @@ function HomePage() {
                     className="absolute inset-0 opacity-40"
                     style={{
                       backgroundImage:
-                        "radial-gradient(circle at 25% 30%, rgba(99,102,241,0.5), transparent 55%), radial-gradient(circle at 75% 70%, rgba(139,92,246,0.5), transparent 55%)",
+                        "radial-gradient(circle at 25% 30%, rgba(14,165,233,0.5), transparent 55%), radial-gradient(circle at 75% 70%, rgba(34,211,238,0.5), transparent 55%)",
                     }}
                   />
                   <div className="absolute top-5 left-5 flex items-center gap-2">
-                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-gradient-to-r from-[#3B82F6] to-[#6366F1] px-3 py-1.5 rounded-md shadow-lg shadow-indigo-500/30">
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-gradient-to-r from-[#1E90FF] to-[#0EA5E9] px-3 py-1.5 rounded-md shadow-lg shadow-indigo-500/30">
                       ★ Featured
                     </span>
                     <span className="text-[10px] uppercase tracking-wider font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded-md backdrop-blur-md">
@@ -227,7 +227,7 @@ function HomePage() {
                   </p>
                   <div className="mt-auto flex items-center justify-between pt-5 border-t border-white/5">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#8B5CF6] grid place-items-center text-sm font-bold text-white">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1E90FF] to-[#22D3EE] grid place-items-center text-sm font-bold text-white">
                         {ARTICLES[0].author.charAt(0)}
                       </div>
                       <div>
@@ -254,7 +254,7 @@ function HomePage() {
                         className="absolute inset-0 opacity-40"
                         style={{
                           backgroundImage:
-                            "radial-gradient(circle at 50% 50%, rgba(99,102,241,0.5), transparent 70%)",
+                            "radial-gradient(circle at 50% 50%, rgba(14,165,233,0.5), transparent 70%)",
                         }}
                       />
                       <div className="absolute bottom-2 left-2">
@@ -327,7 +327,7 @@ function HomePage() {
 
                       <div className="relative z-10 flex items-center justify-between mb-8">
                         <div className="flex items-center gap-3">
-                          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-gradient-to-r from-[#3B82F6] to-[#6366F1] px-3 py-1.5 rounded-md shadow-lg shadow-indigo-500/30">
+                          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-gradient-to-r from-[#1E90FF] to-[#0EA5E9] px-3 py-1.5 rounded-md shadow-lg shadow-indigo-500/30">
                             ★ Spotlight
                           </span>
                           <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-emerald-400/40 text-emerald-300 text-[11px] font-bold">
@@ -372,7 +372,7 @@ function HomePage() {
                       <div className="relative z-10 mb-7">
                         <div className="h-2 bg-white/5 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6] shadow-lg shadow-indigo-500/40"
+                            className="h-full bg-gradient-to-r from-[#1E90FF] via-[#0EA5E9] to-[#22D3EE] shadow-lg shadow-indigo-500/40"
                             style={{ width: `${featured.conf}%` }}
                           />
                         </div>
@@ -381,7 +381,7 @@ function HomePage() {
                       <div className="relative z-10 mt-auto flex items-center gap-3">
                         <Link
                           to="/packages"
-                          className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-[#3B82F6] to-[#6366F1] text-sm font-bold text-white text-center hover:shadow-lg hover:shadow-indigo-500/40 transition-shadow inline-flex items-center justify-center gap-2"
+                          className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-[#1E90FF] to-[#0EA5E9] text-sm font-bold text-white text-center hover:shadow-lg hover:shadow-indigo-500/40 transition-shadow inline-flex items-center justify-center gap-2"
                         >
                           Unlock Whale Pick <ArrowRight className="w-4 h-4" />
                         </Link>
@@ -400,7 +400,7 @@ function HomePage() {
                       <div className="group rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-5 hover:border-indigo-400/30 hover:bg-white/[0.05] transition-all h-full flex flex-col">
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-2.5">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#6366F1] grid place-items-center text-[10px] font-bold text-white">
+                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#1E90FF] to-[#0EA5E9] grid place-items-center text-[10px] font-bold text-white">
                               {p.sport}
                             </div>
                             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-300">
@@ -431,7 +431,7 @@ function HomePage() {
                             </div>
                             <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
                               <div
-                                className="h-full bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#8B5CF6]"
+                                className="h-full bg-gradient-to-r from-[#1E90FF] via-[#0EA5E9] to-[#22D3EE]"
                                 style={{ width: `${p.conf}%` }}
                               />
                             </div>
@@ -531,7 +531,7 @@ function HomePage() {
               <Reveal key={t.name} delay={i * 90}>
                 <div className="card-premium p-6 h-full relative">
                   <span className="absolute top-4 right-4 text-[10px] uppercase tracking-wider font-bold text-indigo-300 bg-indigo-500/15 px-2 py-0.5 rounded-full">Soon</span>
-                  <div className="h-11 w-11 rounded-xl grid place-items-center" style={{ background: "rgba(99,102,241,0.12)", border: "1px solid rgba(99,102,241,0.25)" }}>
+                  <div className="h-11 w-11 rounded-xl grid place-items-center" style={{ background: "rgba(14,165,233,0.12)", border: "1px solid rgba(14,165,233,0.25)" }}>
                     <t.icon className="h-5 w-5 text-indigo-300" strokeWidth={1.75} />
                   </div>
                   <h3 className="mt-4 font-bold tracking-tight">{t.name}</h3>
@@ -564,7 +564,7 @@ function HomePage() {
           </Reveal>
           <Reveal delay={160}>
             <div className="card-premium p-8 relative overflow-hidden">
-              <div className="absolute inset-0 -z-10 opacity-40" style={{ background: "radial-gradient(closest-side, rgba(99,102,241,0.35), transparent 70%)" }} />
+              <div className="absolute inset-0 -z-10 opacity-40" style={{ background: "radial-gradient(closest-side, rgba(14,165,233,0.35), transparent 70%)" }} />
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { v: "62.4%", l: "Win rate" },
