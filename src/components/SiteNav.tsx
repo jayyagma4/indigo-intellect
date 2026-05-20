@@ -8,13 +8,13 @@ export function SiteNav() {
 
   return (
     <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
-      <nav className="flex items-center justify-between px-6 py-1.5 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-2xl shadow-indigo-500/10">
+      <nav className="flex items-center justify-between px-6 py-1 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-2xl shadow-indigo-500/10">
         {/* Logo */}
-        <Link to="/" className="flex items-center shrink-0 -my-8">
+        <Link to="/" className="flex items-center shrink-0 -my-6">
           <img
             src={logo}
             alt="Sportshandicapper"
-            className="h-24 md:h-32 w-auto object-contain drop-shadow-[0_4px_28px_rgba(168,85,247,0.45)]"
+            className="h-16 md:h-20 w-auto object-contain drop-shadow-[0_4px_28px_rgba(168,85,247,0.45)]"
           />
         </Link>
 
