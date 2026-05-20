@@ -212,7 +212,7 @@
   .aurora {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(80px);
+    filter: blur(90px);
     opacity: 0.55;
     will-change: transform;
   }
@@ -235,6 +235,49 @@
     background: radial-gradient(circle, #8B5CF6 0%, transparent 60%);
     animation: aurora-float-3 30s ease-in-out infinite;
     opacity: 0.4;
+  }
+  .aurora-4 {
+    width: 480px; height: 480px;
+    top: 55%; left: -120px;
+    background: radial-gradient(circle, #22d3ee 0%, transparent 60%);
+    animation: aurora-float-1 34s ease-in-out infinite reverse;
+    opacity: 0.28;
+  }
+
+  .conic-shimmer {
+    position: absolute;
+    inset: -20%;
+    background: conic-gradient(from 0deg at 50% 50%,
+      rgba(99,102,241,0) 0deg,
+      rgba(99,102,241,0.18) 60deg,
+      rgba(139,92,246,0.12) 140deg,
+      rgba(59,130,246,0.18) 220deg,
+      rgba(99,102,241,0) 360deg);
+    filter: blur(60px);
+    animation: spin-slow 40s linear infinite;
+    opacity: 0.55;
+  }
+
+  .grid-move {
+    background-image:
+      linear-gradient(to right, #fff 1px, transparent 1px),
+      linear-gradient(to bottom, #fff 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%);
+    animation: grid-pan 30s linear infinite;
+  }
+
+  .scan-beam {
+    position: absolute;
+    left: -20%;
+    right: -20%;
+    top: -40%;
+    height: 60%;
+    background: linear-gradient(180deg, transparent, rgba(99,102,241,0.10), transparent);
+    transform: rotate(8deg);
+    filter: blur(20px);
+    animation: scan-move 14s ease-in-out infinite;
   }
 
   .noise {
@@ -275,5 +318,17 @@
 @keyframes float-slow {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes grid-pan {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 56px 56px, 56px 56px; }
+}
+@keyframes scan-move {
+  0% { transform: translateY(-10%) rotate(8deg); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(180%) rotate(8deg); opacity: 0; }
 }
 
