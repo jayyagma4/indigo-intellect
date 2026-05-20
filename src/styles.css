@@ -33,6 +33,16 @@
   --color-accent-blue: var(--accent-blue);
   --color-accent-violet: var(--accent-violet);
 
+  /* Retheme Tailwind indigo/violet utilities to electric blue + cyan */
+  --color-indigo-200: #BAE6FD;
+  --color-indigo-300: #7DD3FC;
+  --color-indigo-400: #38BDF8;
+  --color-indigo-500: #0EA5E9;
+  --color-indigo-600: #0284C7;
+  --color-violet-500: #22D3EE;
+  --color-violet-400: #67E8F9;
+
+
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
